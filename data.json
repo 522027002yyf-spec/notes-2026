@@ -274,7 +274,70 @@
    "currency": "JPY",
    "category": "食材买菜",
    "note": "白菜1/4 ¥100、小松菜 ¥198、袋入り胡瓜 ¥235、豆腐 ¥158、レジ袋大 ¥5"
+  },
+  {
+   "date": "2026-11-01",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-04",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-06",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "19:00–23:00，4小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "19:00–23:00，4小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-13",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "19:00–23:00，4小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-16",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "工资",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）"
   }
  ],
- "updatedAt": "2026-11-18 20:27"
+ "updatedAt": "2026-11-18 20:50"
 }
