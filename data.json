@@ -162,20 +162,6 @@
    "category": "食材买菜"
   },
   {
-   "date": "2026-11-14",
-   "item": "日用品（唐吉可德）",
-   "amount": 5729,
-   "currency": "JPY",
-   "category": "日用家用"
-  },
-  {
-   "date": "2026-11-14",
-   "item": "外食（定食）",
-   "amount": 2400,
-   "currency": "JPY",
-   "category": "外食"
-  },
-  {
    "date": "2026-11-17",
    "item": "买菜（seria 和糖鸡）",
    "amount": 1263,
@@ -237,7 +223,21 @@
    "amount": 761,
    "currency": "JPY",
    "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "日用品（唐吉可德）",
+   "amount": 7552,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "买菜（蚂蚁）",
+   "amount": 577,
+   "currency": "JPY",
+   "category": "食材买菜"
   }
  ],
- "updatedAt": "2026-11-18 19:42"
+ "updatedAt": "2026-11-18 19:47"
 }
