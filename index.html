@@ -90,11 +90,13 @@
   .day-group:first-child .day-head{ margin-top:6px; }
   .day-title{ font-size:13px; color:var(--muted); font-weight:600; }
   .day-sum{ font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
-  .entry{ display:flex; align-items:center; gap:11px; padding:10px 2px; border-bottom:1px solid var(--line); }
+  .entry{ display:flex; align-items:flex-start; gap:11px; padding:10px 2px; border-bottom:1px solid var(--line); }
   .day-group .entry:last-child{ border-bottom:none; }
+  .entry .chip{ margin-top:1px; }
   .entry .meta{ flex:1; min-width:0; }
   .entry .item{ font-size:15px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .entry .cat{ font-size:11px; color:var(--muted); margin-top:1px; }
+  .entry .note{ font-size:12px; color:var(--muted); margin-top:3px; line-height:1.55; }
   .entry .amt{ font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; flex:none; }
   .empty{ text-align:center; color:var(--muted); padding:30px 10px; font-size:14px; line-height:1.7; }
   footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:8px; }
@@ -279,7 +281,7 @@ function render(){
     const dc = list.filter(e=>e.currency==="CNY").reduce((s,e)=>s+e.amount,0);
     const sum = "小计 "+fmt(dj) + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
     return '<div class="day-group" id="day-'+ds+'"><div class="day-head"><span class="day-title">'+dayLabel(ds)+'</span><span class="day-sum">'+sum+'</span></div>' +
-      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div></div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
+      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+(e.note ? '<div class="note">'+e.note+'</div>' : '')+'</div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
   }).join("");
 }
 
