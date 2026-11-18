@@ -79,6 +79,7 @@
   .cat-bar i{ display:block; height:100%; border-radius:3px; }
   .cat-pct{ font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; flex:none; min-width:40px; text-align:right; }
   /* 流水 */
+  #flowCard{ scroll-margin-top:76px; }
   .flow-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
   .flow-head h2{ margin-bottom:0; }
   .fchip{ display:none; align-items:center; gap:6px; padding:5px 8px 5px 12px; border-radius:99px; background:var(--accent); color:#fff; font-size:12px; font-weight:600; cursor:pointer; border:none; }
@@ -160,7 +161,7 @@
     <div id="monthList"></div>
   </div>
 
-  <div class="card">
+  <div class="card" id="flowCard">
     <div class="flow-head">
       <h2>明细</h2>
       <button class="fchip" id="fchip"><span id="fchipTxt"></span><b>✕</b></button>
@@ -283,8 +284,10 @@ function render(){
         '<span class="cat-pct">'+(v/total*100).toFixed(1)+'%</span></div>').join("")
     : '<div class="empty">暂无记录</div>';
   catsEl.querySelectorAll(".cat-row").forEach(r => r.addEventListener("click", () => {
-    filterCat = filterCat === r.dataset.cat ? null : r.dataset.cat;
+    const turningOn = filterCat !== r.dataset.cat;
+    filterCat = turningOn ? r.dataset.cat : null;
     render();
+    if(turningOn){ const fc = document.getElementById("flowCard"); if(fc) fc.scrollIntoView({behavior:"smooth", block:"start"}); }
   }));
 
   // 筛选徽标
