@@ -209,7 +209,35 @@
    "amount": 471,
    "currency": "JPY",
    "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "买菜（Life）",
+   "amount": 1057,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "眼科（严）",
+   "amount": 3070,
+   "currency": "JPY",
+   "category": "医疗健康"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "外食（定食）",
+   "amount": 2400,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-13",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 761,
+   "currency": "JPY",
+   "category": "食材买菜"
   }
  ],
- "updatedAt": "2026-11-18 19:31"
+ "updatedAt": "2026-11-18 19:42"
 }
