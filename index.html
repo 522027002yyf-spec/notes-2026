@@ -8,45 +8,51 @@
   :root{
     --bg:#FAF6EF; --card:#FFFFFF; --ink:#22302A; --muted:#7A877F;
     --accent:#1F6F50; --accent2:#2E8B66; --line:#EAE3D5;
-    --shadow:0 2px 14px rgba(60,50,20,.07); --track:#F0EADD;
+    --shadow:0 2px 14px rgba(60,50,20,.07); --track:#F0EADD; --press:#F3EEE1;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#141815; --card:#1F2620; --ink:#EDEBE4; --muted:#9AA79D; --line:#333B33; --shadow:0 2px 14px rgba(0,0,0,.35); --track:#2B332C; }
+    :root{ --bg:#141815; --card:#1F2620; --ink:#EDEBE4; --muted:#9AA79D; --line:#333B33; --shadow:0 2px 14px rgba(0,0,0,.35); --track:#2B332C; --press:#293028; }
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
   body{ background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans SC",sans-serif; padding:0 14px 48px; }
   .wrap{ max-width:520px; margin:0 auto; }
-  header{ position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; padding:14px 2px 10px; background:var(--bg); }
+  header{ position:sticky; top:0; z-index:6; display:flex; align-items:center; justify-content:space-between; padding:14px 2px 10px; background:var(--bg); }
   header h1{ font-size:19px; font-weight:700; }
   .nav{ display:flex; align-items:center; gap:6px; }
   .nav button{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:17px; cursor:pointer; }
+  .nav button:active{ background:var(--press); }
   .nav button:disabled{ opacity:.35; }
   .nav .ym{ font-size:15px; font-weight:600; min-width:92px; text-align:center; }
+  .backnow{ display:none; margin:0 auto 12px; padding:6px 14px; border-radius:99px; border:1px solid var(--line); background:var(--card); color:var(--accent); font-size:13px; font-weight:600; cursor:pointer; }
   .card{ background:var(--card); border-radius:18px; box-shadow:var(--shadow); padding:20px; margin-bottom:14px; }
-  .card h2{ font-size:14px; font-weight:700; margin-bottom:14px; }
-  .card h2 span{ color:var(--muted); font-weight:400; font-size:12px; margin-left:6px; }
+  .card h2{ font-size:14px; font-weight:700; margin-bottom:6px; display:flex; align-items:baseline; justify-content:space-between; }
+  .card h2 .hint{ color:var(--muted); font-weight:400; font-size:12px; }
   /* 主卡 */
-  .hero{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border-radius:20px; box-shadow:0 6px 22px rgba(31,111,80,.28); padding:22px 20px 18px; margin-bottom:14px; }
-  .hero .total-label{ font-size:13px; opacity:.85; }
-  .hero .total{ font-size:42px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.5px; margin:2px 0 14px; }
-  .hero .stats{ display:flex; gap:10px; }
+  .hero{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border-radius:20px; box-shadow:0 6px 22px rgba(31,111,80,.28); padding:22px 20px 18px; margin-bottom:14px; position:relative; overflow:hidden; }
+  .hero::before{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.08); top:-110px; right:-60px; }
+  .hero .total-label{ font-size:13px; opacity:.85; position:relative; }
+  .hero .total{ font-size:42px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.5px; margin:2px 0 14px; position:relative; }
+  .hero .stats{ display:flex; gap:10px; position:relative; }
   .hero .stat{ flex:1; background:rgba(255,255,255,.14); border-radius:12px; padding:9px 10px; }
   .hero .stat .k{ font-size:11px; opacity:.85; }
   .hero .stat .v{ font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:1px; }
-  .hero .prog{ margin-top:14px; }
+  .hero .prog{ margin-top:14px; position:relative; }
   .hero .prog .bar{ height:6px; border-radius:3px; background:rgba(255,255,255,.25); overflow:hidden; }
   .hero .prog .bar i{ display:block; height:100%; background:#fff; border-radius:3px; }
   .hero .prog .txt{ font-size:12px; opacity:.9; margin-top:6px; font-variant-numeric:tabular-nums; }
-  .hero .cny-line{ font-size:12px; opacity:.9; margin-top:8px; font-variant-numeric:tabular-nums; }
+  .hero .cny-line{ font-size:12px; opacity:.9; margin-top:8px; font-variant-numeric:tabular-nums; position:relative; }
   /* 趋势 */
-  .trend{ display:flex; align-items:flex-end; gap:2px; height:86px; }
-  .trend .col{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; min-width:0; }
+  .trend{ display:flex; align-items:flex-end; gap:2px; height:88px; margin-top:8px; }
+  .trend .col{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; min-width:0; cursor:pointer; border-radius:6px; padding-top:4px; }
+  .trend .col:active{ background:var(--press); }
   .trend .b{ width:70%; max-width:14px; border-radius:3px 3px 0 0; background:var(--accent); opacity:.45; min-height:2px; }
   .trend .col.today .b{ opacity:1; }
   .trend .col .d{ font-size:9px; color:var(--muted); margin-top:4px; font-variant-numeric:tabular-nums; }
   .trend-empty{ color:var(--muted); font-size:13px; text-align:center; padding:18px 0 8px; }
   /* 分类排行 */
-  .cat-row{ display:flex; align-items:center; gap:10px; padding:7px 0; }
+  .cat-row{ display:flex; align-items:center; gap:10px; padding:10px 8px; border-radius:12px; cursor:pointer; margin:0 -8px; }
+  .cat-row:active{ background:var(--press); }
+  .cat-row.active{ background:var(--press); box-shadow:inset 0 0 0 1px var(--line); }
   .chip{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; flex:none; }
   .cat-main{ flex:1; min-width:0; }
   .cat-top{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
@@ -54,14 +60,21 @@
   .cat-amt{ font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; flex:none; }
   .cat-bar{ height:5px; border-radius:3px; background:var(--track); overflow:hidden; margin-top:5px; }
   .cat-bar i{ display:block; height:100%; border-radius:3px; }
-  .cat-pct{ font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; flex:none; min-width:40px; }
+  .cat-pct{ font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; flex:none; min-width:40px; text-align:right; }
   /* 流水 */
+  .flow-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
+  .flow-head h2{ margin-bottom:0; }
+  .fchip{ display:none; align-items:center; gap:6px; padding:5px 8px 5px 12px; border-radius:99px; background:var(--accent); color:#fff; font-size:12px; font-weight:600; cursor:pointer; border:none; }
+  .fchip b{ font-size:14px; line-height:1; }
+  .day-group{ border-radius:12px; }
+  .day-group.flash{ animation:flash 1.4s ease; }
+  @keyframes flash{ 0%,60%{ background:rgba(31,111,80,.13); } 100%{ background:transparent; } }
   .day-head{ display:flex; align-items:baseline; justify-content:space-between; margin:16px 2px 4px; }
-  .day-head:first-child{ margin-top:0; }
+  .day-group:first-child .day-head{ margin-top:6px; }
   .day-title{ font-size:13px; color:var(--muted); font-weight:600; }
   .day-sum{ font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
   .entry{ display:flex; align-items:center; gap:11px; padding:10px 2px; border-bottom:1px solid var(--line); }
-  .entry:last-child{ border-bottom:none; }
+  .day-group .entry:last-child{ border-bottom:none; }
   .entry .meta{ flex:1; min-width:0; }
   .entry .item{ font-size:15px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .entry .cat{ font-size:11px; color:var(--muted); margin-top:1px; }
@@ -80,6 +93,7 @@
       <button id="next" aria-label="下个月">›</button>
     </div>
   </header>
+  <button class="backnow" id="backnow">回到本月</button>
 
   <div class="hero">
     <div class="total-label" id="totalLabel">本月总支出</div>
@@ -97,16 +111,22 @@
   </div>
 
   <div class="card">
-    <h2>每日支出<span>按天看花钱节奏</span></h2>
+    <h2>每日支出<span class="hint">点任意一天，跳到那天的明细</span></h2>
     <div id="trend"></div>
   </div>
 
   <div class="card">
-    <h2>分类排行<span>钱主要花在哪</span></h2>
+    <h2>分类排行<span class="hint">点分类，只看这一类</span></h2>
     <div id="cats"></div>
   </div>
 
-  <div class="card"><div id="flow"></div></div>
+  <div class="card">
+    <div class="flow-head">
+      <h2>明细</h2>
+      <button class="fchip" id="fchip"><span id="fchipTxt"></span><b>✕</b></button>
+    </div>
+    <div id="flow"></div>
+  </div>
   <footer id="updated"></footer>
 </div>
 
@@ -123,7 +143,7 @@ const ICONS = {
 };
 const WD = ["周日","周一","周二","周三","周四","周五","周六"];
 const fmt = n => "¥" + Math.round(n).toLocaleString("ja-JP");
-let entries = [], viewYM = null;
+let entries = [], viewYM = null, filterCat = null, lastHash = "";
 
 function ymOf(d){ return d.slice(0,7); }
 function pad(n){ return String(n).padStart(2,"0"); }
@@ -149,6 +169,7 @@ function render(){
   const [vy, vm] = viewYM.split("-").map(Number);
   document.getElementById("ym").textContent = vy+"年"+vm+"月";
   document.getElementById("next").disabled = viewYM >= curYM();
+  document.getElementById("backnow").style.display = viewYM === curYM() ? "none" : "block";
   const isCur = viewYM === curYM();
   const month = entries.filter(e => ymOf(e.date)===viewYM);
   const jpy = month.filter(e => e.currency==="JPY");
@@ -158,7 +179,6 @@ function render(){
   const dim = daysIn(vy, vm);
   const elapsed = isCur ? new Date().getDate() : dim;
 
-  // 每日合计（JPY）
   const perDay = {};
   jpy.forEach(e => { const d = Number(e.date.slice(8,10)); perDay[d] = (perDay[d]||0) + e.amount; });
   const maxDay = Math.max(0, ...Object.values(perDay));
@@ -180,7 +200,7 @@ function render(){
   const cl = document.getElementById("cnyLine");
   if(cnyTotal>0){ cl.style.display="block"; cl.textContent = "另有人民币支出 " + cnyTotal.toLocaleString("ja-JP") + " 元（分开统计，不并入上面）"; } else { cl.style.display="none"; }
 
-  // 每日趋势
+  // 每日趋势（可点）
   const trend = document.getElementById("trend");
   if(total>0){
     let html = '<div class="trend">';
@@ -188,53 +208,80 @@ function render(){
       const v = perDay[d]||0;
       const h = maxDay>0 ? Math.max(3, v/maxDay*64) : 3;
       const isToday = isCur && d===new Date().getDate();
-      html += '<div class="col'+(isToday?' today':'')+'"><div class="b" style="height:'+h+'px"></div><div class="d">'+(d===1||d%5===0||isToday?d:"")+'</div></div>';
+      const ds = viewYM+"-"+pad(d);
+      html += '<div class="col'+(isToday?' today':'')+'" data-date="'+ds+'" title="'+vm+'月'+d+'日 '+fmt(v)+'"><div class="b" style="height:'+h+'px"></div><div class="d">'+(d===1||d%5===0||isToday?d:"")+'</div></div>';
     }
     trend.innerHTML = html + '</div>';
+    trend.querySelectorAll(".col").forEach(c => c.addEventListener("click", () => jumpToDay(c.dataset.date)));
   } else {
     trend.innerHTML = '<div class="trend-empty">这个月还没有支出记录</div>';
   }
 
-  // 分类排行
+  // 分类排行（可点筛选）
   const byCat = {};
   jpy.forEach(e => { byCat[e.category] = (byCat[e.category]||0) + e.amount; });
   const cats = Object.entries(byCat).sort((a,b)=>b[1]-a[1]);
   const maxCat = cats.length ? cats[0][1] : 0;
-  document.getElementById("cats").innerHTML = cats.length
+  const catsEl = document.getElementById("cats");
+  catsEl.innerHTML = cats.length
     ? cats.map(([c,v]) =>
-        '<div class="cat-row">'+chip(c)+
+        '<div class="cat-row'+(filterCat===c?' active':'')+'" data-cat="'+c+'">'+chip(c)+
         '<div class="cat-main"><div class="cat-top"><span class="cat-name">'+c+'</span><span class="cat-amt">'+fmt(v)+'</span></div>'+
         '<div class="cat-bar"><i style="width:'+(v/maxCat*100).toFixed(1)+'%;background:'+(COLORS[c]||"#9AA3AD")+'"></i></div></div>'+
         '<span class="cat-pct">'+(v/total*100).toFixed(1)+'%</span></div>').join("")
     : '<div class="empty">暂无记录</div>';
+  catsEl.querySelectorAll(".cat-row").forEach(r => r.addEventListener("click", () => {
+    filterCat = filterCat === r.dataset.cat ? null : r.dataset.cat;
+    render();
+  }));
 
-  // 流水按日分组（带当日小计）
+  // 筛选徽标
+  const fchip = document.getElementById("fchip");
+  if(filterCat){ fchip.style.display = "inline-flex"; document.getElementById("fchipTxt").textContent = "只看：" + filterCat; }
+  else { fchip.style.display = "none"; }
+
+  // 流水（按筛选）
   const flow = document.getElementById("flow");
+  const shown = filterCat ? month.filter(e => e.category===filterCat) : month;
   if(!month.length){ flow.innerHTML = '<div class="empty">账本还是空的<br>跟各自的 Muse 说一句消费，就记上了</div>'; return; }
+  if(!shown.length){ flow.innerHTML = '<div class="empty">这个月没有「'+filterCat+'」的记录</div>'; return; }
   const days = {};
-  month.forEach(e => { (days[e.date] = days[e.date]||[]).push(e); });
+  shown.forEach(e => { (days[e.date] = days[e.date]||[]).push(e); });
   flow.innerHTML = Object.keys(days).sort().reverse().map(ds => {
     const list = days[ds];
     const dj = list.filter(e=>e.currency==="JPY").reduce((s,e)=>s+e.amount,0);
     const dc = list.filter(e=>e.currency==="CNY").reduce((s,e)=>s+e.amount,0);
     const sum = "小计 "+fmt(dj) + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
-    return '<div class="day-head"><span class="day-title">'+dayLabel(ds)+'</span><span class="day-sum">'+sum+'</span></div>' +
-      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div></div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("");
+    return '<div class="day-group" id="day-'+ds+'"><div class="day-head"><span class="day-title">'+dayLabel(ds)+'</span><span class="day-sum">'+sum+'</span></div>' +
+      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div></div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
   }).join("");
+}
+
+function jumpToDay(ds){
+  let el = document.getElementById("day-"+ds);
+  if(!el && filterCat){ filterCat = null; render(); el = document.getElementById("day-"+ds); }
+  if(!el) return;
+  el.scrollIntoView({behavior:"smooth", block:"start"});
+  el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
 }
 
 async function load(){
   try{
     const r = await fetch("data.json?t=" + Date.now());
     const data = await r.json();
+    const h = JSON.stringify(data.entries||[]) + "|" + (data.updatedAt||"");
+    if(h === lastHash) return;
+    lastHash = h;
     entries = data.entries || [];
     if(!viewYM) viewYM = curYM();
     document.getElementById("updated").textContent = data.updatedAt ? ("最后更新 " + data.updatedAt) : "";
     render();
   }catch(e){ /* 网络不通时保留上次画面 */ }
 }
-document.getElementById("prev").onclick = () => { viewYM = shiftYM(viewYM,-1); render(); };
-document.getElementById("next").onclick = () => { viewYM = shiftYM(viewYM, 1); render(); };
+document.getElementById("prev").onclick = () => { viewYM = shiftYM(viewYM,-1); filterCat = null; render(); };
+document.getElementById("next").onclick = () => { viewYM = shiftYM(viewYM, 1); filterCat = null; render(); };
+document.getElementById("backnow").onclick = () => { viewYM = curYM(); filterCat = null; render(); };
+document.getElementById("fchip").onclick = () => { filterCat = null; render(); };
 load();
 setInterval(load, 60000);
 </script>
