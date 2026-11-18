@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>夫妻共享记账本</title>
+<style>
+  :root{
+    --bg:#FAF6EF; --card:#FFFFFF; --ink:#22302A; --muted:#7A877F;
+    --accent:#1F6F50; --line:#EAE3D5; --shadow:0 2px 14px rgba(60,50,20,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#161B18; --card:#20261F; --ink:#EDEBE4; --muted:#9AA79D; --line:#333B33; --shadow:0 2px 14px rgba(0,0,0,.35); }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans SC",sans-serif; padding:20px 14px 48px; }
+  .wrap{ max-width:520px; margin:0 auto; }
+  header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  header h1{ font-size:19px; font-weight:700; }
+  .nav{ display:flex; align-items:center; gap:6px; }
+  .nav button{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:17px; cursor:pointer; }
+  .nav button:disabled{ opacity:.35; }
+  .nav .ym{ font-size:15px; font-weight:600; min-width:96px; text-align:center; }
+  .card{ background:var(--card); border-radius:18px; box-shadow:var(--shadow); padding:20px; margin-bottom:14px; }
+  .total-label{ font-size:13px; color:var(--muted); }
+  .total{ font-size:40px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.5px; margin:2px 0 6px; }
+  .sub{ font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .sub b{ color:var(--ink); font-weight:600; }
+  .cny-line{ font-size:13px; color:var(--muted); margin-top:2px; font-variant-numeric:tabular-nums; }
+  .donut-row{ display:flex; align-items:center; gap:18px; }
+  .donut{ width:132px; height:132px; border-radius:50%; flex:none; position:relative; }
+  .donut::after{ content:""; position:absolute; inset:22px; border-radius:50%; background:var(--card); }
+  .donut-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:1; }
+  .donut-center .dc-t{ font-size:11px; color:var(--muted); }
+  .donut-center .dc-v{ font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; }
+  .legend{ flex:1; min-width:0; }
+  .cat-row{ display:flex; align-items:center; gap:8px; padding:5px 0; font-size:14px; }
+  .dot{ width:10px; height:10px; border-radius:50%; flex:none; }
+  .cat-name{ flex:none; }
+  .cat-bar{ flex:1; height:5px; border-radius:3px; background:var(--line); overflow:hidden; min-width:30px; }
+  .cat-bar i{ display:block; height:100%; border-radius:3px; }
+  .cat-amt{ font-variant-numeric:tabular-nums; font-weight:600; min-width:76px; text-align:right; }
+  .day-title{ font-size:13px; color:var(--muted); margin:16px 4px 6px; }
+  .entry{ display:flex; align-items:center; gap:9px; padding:10px 2px; border-bottom:1px solid var(--line); }
+  .entry:last-child{ border-bottom:none; }
+  .entry .item{ font-size:15px; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .tag{ font-size:11px; padding:2px 8px; border-radius:99px; color:#fff; flex:none; }
+  .entry .amt{ font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; flex:none; }
+  .empty{ text-align:center; color:var(--muted); padding:34px 10px; font-size:14px; line-height:1.7; }
+  footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🧾 夫妻共享记账本</h1>
+    <div class="nav">
+      <button id="prev" aria-label="上个月">‹</button>
+      <div class="ym" id="ym"></div>
+      <button id="next" aria-label="下个月">›</button>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="total-label">本月总支出</div>
+    <div class="total" id="total">¥0</div>
+    <div class="sub">今日支出 <b id="today">¥0</b> · 本月 <b id="count">0</b> 笔</div>
+    <div class="cny-line" id="cnyLine" style="display:none"></div>
+  </div>
+
+  <div class="card">
+    <div class="donut-row">
+      <div class="donut" id="donut"><div class="donut-center"><div class="dc-t">本月</div><div class="dc-v" id="dcv">¥0</div></div></div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </div>
+
+  <div class="card" id="flowCard"><div id="flow"></div></div>
+  <footer id="updated"></footer>
+</div>
+
+<script>
+const COLORS = {
+  "食材买菜":"#43A673","外食":"#F08A3C","饮料零食":"#E3B341","交通":"#4E8FD9",
+  "日用家用":"#8FBF6B","居住固定费":"#71809A","衣物美容":"#E77FA2","医疗健康":"#DE6159",
+  "学习教育":"#9466D8","娱乐休闲":"#2BB3A3","交际人情":"#C98A5E","其他":"#9AA3AD"
+};
+const fmt = n => "¥" + n.toLocaleString("ja-JP");
+let entries = [], viewYM = null;
+
+function ymOf(d){ return d.slice(0,7); }
+function todayStr(){ const t=new Date(); return t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0"); }
+function curYM(){ const t=new Date(); return t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0"); }
+function dayLabel(ds){
+  const t = todayStr();
+  const y = new Date(Date.now()-864e5), ys = y.getFullYear()+"-"+String(y.getMonth()+1).padStart(2,"0")+"-"+String(y.getDate()).padStart(2,"0");
+  if(ds===t) return "今天 · "+ds.slice(5).replace("-","月")+"日";
+  if(ds===ys) return "昨天 · "+ds.slice(5).replace("-","月")+"日";
+  const d = new Date(ds+"T00:00:00");
+  return ds.slice(0,4)+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日";
+}
+function shiftYM(ym, delta){ const [y,m]=ym.split("-").map(Number); const d=new Date(y, m-1+delta, 1); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0"); }
+
+function render(){
+  const [vy, vm] = viewYM.split("-");
+  document.getElementById("ym").textContent = vy+"年"+Number(vm)+"月";
+  document.getElementById("next").disabled = viewYM >= curYM();
+  const month = entries.filter(e => ymOf(e.date)===viewYM);
+  const jpy = month.filter(e => e.currency==="JPY");
+  const cny = month.filter(e => e.currency==="CNY");
+  const total = jpy.reduce((s,e)=>s+e.amount,0);
+  const cnyTotal = cny.reduce((s,e)=>s+e.amount,0);
+  const todayTotal = entries.filter(e=>e.date===todayStr() && e.currency==="JPY").reduce((s,e)=>s+e.amount,0);
+  document.getElementById("total").textContent = fmt(total);
+  document.getElementById("dcv").textContent = fmt(total);
+  document.getElementById("today").textContent = fmt(todayTotal);
+  document.getElementById("count").textContent = month.length;
+  const cl = document.getElementById("cnyLine");
+  if(cnyTotal>0){ cl.style.display="block"; cl.textContent = "另有人民币支出 " + cnyTotal.toLocaleString("ja-JP") + " 元（分开统计）"; } else { cl.style.display="none"; }
+
+  // 分类汇总（JPY）
+  const byCat = {};
+  jpy.forEach(e => { byCat[e.category] = (byCat[e.category]||0) + e.amount; });
+  const cats = Object.entries(byCat).sort((a,b)=>b[1]-a[1]);
+  const donut = document.getElementById("donut");
+  if(total>0){
+    let acc = 0; const parts = cats.map(([c,v]) => { const a0 = acc/total*360; acc += v; const a1 = acc/total*360; return COLORS[c]+" "+a0+"deg "+a1+"deg"; });
+    donut.style.background = "conic-gradient(" + parts.join(",") + ")";
+  } else { donut.style.background = "var(--line)"; }
+  document.getElementById("legend").innerHTML = cats.length
+    ? cats.map(([c,v]) => '<div class="cat-row"><span class="dot" style="background:'+COLORS[c]+'"></span><span class="cat-name">'+c+'</span><span class="cat-bar"><i style="width:'+(v/total*100).toFixed(1)+'%;background:'+COLORS[c]+'"></i></span><span class="cat-amt">'+fmt(v)+'</span></div>').join("")
+    : '<div class="empty">暂无记录</div>';
+
+  // 流水按日分组
+  const flow = document.getElementById("flow");
+  if(!month.length){ flow.innerHTML = '<div class="empty">账本还是空的<br>跟各自的 Muse 说一句消费，就记上了</div>'; return; }
+  const days = {};
+  month.forEach(e => { (days[e.date] = days[e.date]||[]).push(e); });
+  flow.innerHTML = Object.keys(days).sort().reverse().map(ds =>
+    '<div class="day-title">'+dayLabel(ds)+'</div>' +
+    days[ds].map(e => '<div class="entry"><span class="item">'+e.item+'</span><span class="tag" style="background:'+(COLORS[e.category]||"#9AA3AD")+'">'+e.category+'</span><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("")
+  ).join("");
+}
+
+async function load(){
+  try{
+    const r = await fetch("data.json?t=" + Date.now());
+    const data = await r.json();
+    entries = data.entries || [];
+    if(!viewYM) viewYM = curYM();
+    document.getElementById("updated").textContent = data.updatedAt ? ("最后更新 " + data.updatedAt) : "";
+    render();
+  }catch(e){ /* 网络不通时保留上次画面 */ }
+}
+document.getElementById("prev").onclick = () => { viewYM = shiftYM(viewYM,-1); render(); };
+document.getElementById("next").onclick = () => { viewYM = shiftYM(viewYM, 1); render(); };
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
