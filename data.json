@@ -258,7 +258,21 @@
    "amount": 244,
    "currency": "JPY",
    "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "买菜（肉の宝屋）",
+   "amount": 2077,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "买菜（野方青果）",
+   "amount": 751,
+   "currency": "JPY",
+   "category": "食材买菜"
   }
  ],
- "updatedAt": "2026-11-18 20:08"
+ "updatedAt": "2026-11-18 20:16"
 }
