@@ -237,7 +237,28 @@
    "amount": 577,
    "currency": "JPY",
    "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "买菜（OK超市）",
+   "amount": 688,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "咖啡（まいばすけっと）",
+   "amount": 117,
+   "currency": "JPY",
+   "category": "饮料零食"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "盐面包（ライフ）",
+   "amount": 244,
+   "currency": "JPY",
+   "category": "食材买菜"
   }
  ],
- "updatedAt": "2026-11-18 19:47"
+ "updatedAt": "2026-11-18 20:08"
 }
