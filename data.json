@@ -1,1 +1,215 @@
-{"entries":[],"updatedAt":""}
+{
+ "entries": [
+  {
+   "date": "2026-11-01",
+   "item": "衣服（拼多多）",
+   "amount": 8356,
+   "currency": "JPY",
+   "category": "衣物美容"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "煤炉相机",
+   "amount": 15000,
+   "currency": "JPY",
+   "category": "其他"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "买菜（学校物产）",
+   "amount": 4086,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 309,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 346,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "日用品（堂吉诃德）",
+   "amount": 1386,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "日用品（无印良品）",
+   "amount": 3707,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "买菜（萨米托）",
+   "amount": 551,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "买菜（商店街）",
+   "amount": 3263,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 354,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-05",
+   "item": "买菜（GU+m无印）",
+   "amount": 2592,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-06",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 525,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-06",
+   "item": "买菜（萨米托）",
+   "amount": 1220,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "日用品（Homes）",
+   "amount": 2279,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "买菜（咖啡店）",
+   "amount": 997,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "买菜",
+   "amount": 3590,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "外食（汉堡王）",
+   "amount": 1780,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "过敏药",
+   "amount": 2196,
+   "currency": "JPY",
+   "category": "医疗健康"
+  },
+  {
+   "date": "2026-11-10",
+   "item": "交通费",
+   "amount": 600,
+   "currency": "JPY",
+   "category": "交通"
+  },
+  {
+   "date": "2026-11-10",
+   "item": "买菜（橘子）",
+   "amount": 400,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-10",
+   "item": "买菜（地下商店）",
+   "amount": 2603,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-11",
+   "item": "饮料",
+   "amount": 500,
+   "currency": "JPY",
+   "category": "饮料零食"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "买菜（商店街）",
+   "amount": 890,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "日用品（唐吉可德）",
+   "amount": 5729,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "外食（定食）",
+   "amount": 2400,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "买菜（seria 和糖鸡）",
+   "amount": 1263,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "买菜（业务和蚂蚁帮）",
+   "amount": 1973,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "交通费（上学）",
+   "amount": 650,
+   "currency": "JPY",
+   "category": "交通"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "外食（蚂蚁帮）",
+   "amount": 106,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 471,
+   "currency": "JPY",
+   "category": "食材买菜"
+  }
+ ],
+ "updatedAt": "2026-11-18 19:31"
+}
