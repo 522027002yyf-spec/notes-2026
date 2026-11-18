@@ -300,15 +300,15 @@ function render(){
     const incTotal = incList.filter(e=>e.currency==="JPY").reduce((s,e)=>s+e.amount,0);
     document.getElementById("wageHint").textContent = "合计 " + fmt(incTotal);
     const byInc = {};
-    incList.forEach(e => { if(e.currency==="JPY") byInc[e.category] = (byInc[e.category]||0) + e.amount; });
-    const incCats = Object.entries(byInc).sort((a,b)=>b[1]-a[1]);
-    const maxInc = incCats.length ? incCats[0][1] : 0;
-    document.getElementById("incCats").innerHTML = incCats.map(([c,v]) =>
-      '<div class="cat-row" style="cursor:default">'+chip(c)+
-      '<div class="cat-main"><div class="cat-top"><span class="cat-name">'+c+'</span><span class="cat-amt">'+fmt(v)+'</span></div>'+
-      '<div class="cat-bar"><i style="width:'+(maxInc? (v/maxInc*100).toFixed(1) : 0)+'%;background:'+(COLORS[c]||"#9AA3AD")+'"></i></div></div>'+
-      '<span class="cat-pct">'+(incTotal? (v/incTotal*100).toFixed(1) : 0)+'%</span></div>').join("");
-    document.getElementById("wageList").innerHTML = '<div class="sub-title">明细（按日期）</div>' + incList.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+dayLabel(e.date)+'</div><div class="cat">'+(e.note || e.item)+'</div></div><span class="amt inc">+'+fmt(e.amount)+'</span></div>').join("");
+    incList.forEach(e => { if(e.currency!=="JPY") return; const key = e.category + (e.person ? "（"+e.person+"）" : ""); if(!byInc[key]) byInc[key] = {label:key, base:e.category, v:0}; byInc[key].v += e.amount; });
+    const incCats = Object.values(byInc).sort((a,b)=>b.v-a.v);
+    const maxInc = incCats.length ? incCats[0].v : 0;
+    document.getElementById("incCats").innerHTML = incCats.map(g =>
+      '<div class="cat-row" style="cursor:default">'+chip(g.base)+
+      '<div class="cat-main"><div class="cat-top"><span class="cat-name">'+g.label+'</span><span class="cat-amt">'+fmt(g.v)+'</span></div>'+
+      '<div class="cat-bar"><i style="width:'+(maxInc? (g.v/maxInc*100).toFixed(1) : 0)+'%;background:'+(COLORS[g.base]||"#9AA3AD")+'"></i></div></div>'+
+      '<span class="cat-pct">'+(incTotal? (g.v/incTotal*100).toFixed(1) : 0)+'%</span></div>').join("");
+    document.getElementById("wageList").innerHTML = '<div class="sub-title">明细（按日期）</div>' + incList.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+dayLabel(e.date)+'</div><div class="cat">'+(e.person ? e.person+" · " : "")+(e.note || e.item)+'</div></div><span class="amt inc">+'+fmt(e.amount)+'</span></div>').join("");
   } else wageCard.style.display = "none";
 
   // 月度结余（全部月份 + 旧账本导入的月度汇总）
