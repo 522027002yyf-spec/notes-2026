@@ -98,6 +98,7 @@
   .entry .cat{ font-size:11px; color:var(--muted); margin-top:1px; }
   .entry .note{ font-size:12px; color:var(--muted); margin-top:3px; line-height:1.55; }
   .entry .amt{ font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; flex:none; }
+  .entry .amt.inc{ color:var(--accent); }
   .empty{ text-align:center; color:var(--muted); padding:30px 10px; font-size:14px; line-height:1.7; }
   footer{ text-align:center; color:var(--muted); font-size:12px; margin-top:8px; }
 </style>
@@ -115,12 +116,12 @@
   <button class="backnow" id="backnow">回到本月</button>
 
   <div class="hero">
-    <div class="total-label" id="totalLabel">本月总支出</div>
+    <div class="total-label" id="totalLabel">本月结余（收入 − 支出）</div>
     <div class="total" id="total">¥0</div>
     <div class="stats">
-      <div class="stat"><div class="k" id="stat1k">今日支出</div><div class="v" id="stat1">¥0</div></div>
-      <div class="stat"><div class="k">日均支出</div><div class="v" id="stat2">¥0</div></div>
-      <div class="stat"><div class="k">本月笔数</div><div class="v" id="stat3">0 笔</div></div>
+      <div class="stat"><div class="k" id="stat1k">本月收入</div><div class="v" id="stat1">¥0</div></div>
+      <div class="stat"><div class="k" id="stat2k">本月支出</div><div class="v" id="stat2">¥0</div></div>
+      <div class="stat"><div class="k" id="stat3k">本月笔数</div><div class="v" id="stat3">0 笔</div></div>
     </div>
     <div class="prog" id="prog" style="display:none">
       <div class="bar"><i id="progBar"></i></div>
@@ -153,15 +154,16 @@
 const COLORS = {
   "食材买菜":"#43A673","外食":"#F08A3C","饮料零食":"#E3B341","交通":"#4E8FD9",
   "日用家用":"#8FBF6B","居住固定费":"#71809A","衣物美容":"#E77FA2","医疗健康":"#DE6159",
-  "学习教育":"#9466D8","娱乐休闲":"#2BB3A3","交际人情":"#C98A5E","购物":"#9AA3AD"
+  "学习教育":"#9466D8","娱乐休闲":"#2BB3A3","交际人情":"#C98A5E","购物":"#9AA3AD","工资":"#2E8B66"
 };
 const ICONS = {
   "食材买菜":"🥬","外食":"🍜","饮料零食":"☕","交通":"🚃",
   "日用家用":"🧺","居住固定费":"🏠","衣物美容":"👕","医疗健康":"💊",
-  "学习教育":"📚","娱乐休闲":"🎮","交际人情":"🎁","购物":"🛍️"
+  "学习教育":"📚","娱乐休闲":"🎮","交际人情":"🎁","购物":"🛍️","工资":"💰"
 };
 const WD = ["周日","周一","周二","周三","周四","周五","周六"];
 const fmt = n => "¥" + Math.round(n).toLocaleString("ja-JP");
+const fmtSigned = n => (n<0 ? "−" : "") + "¥" + Math.abs(Math.round(n)).toLocaleString("ja-JP");
 let entries = [], viewYM = null, filterCat = null, lastHash = "";
 
 function ymOf(d){ return d.slice(0,7); }
@@ -191,8 +193,9 @@ function render(){
   document.getElementById("backnow").style.display = viewYM === curYM() ? "none" : "block";
   const isCur = viewYM === curYM();
   const month = entries.filter(e => ymOf(e.date)===viewYM);
-  const jpy = month.filter(e => e.currency==="JPY");
-  const cny = month.filter(e => e.currency==="CNY");
+  const jpy = month.filter(e => e.currency==="JPY" && e.type!=="income");
+  const cny = month.filter(e => e.currency==="CNY" && e.type!=="income");
+  const incJpy = month.filter(e => e.currency==="JPY" && e.type==="income").reduce((s,e)=>s+e.amount,0);
   const total = jpy.reduce((s,e)=>s+e.amount,0);
   const cnyTotal = cny.reduce((s,e)=>s+e.amount,0);
   const dim = daysIn(vy, vm);
@@ -203,12 +206,13 @@ function render(){
   const maxDay = Math.max(0, ...Object.values(perDay));
 
   // 主卡
-  document.getElementById("totalLabel").textContent = isCur ? "本月总支出" : vm+"月总支出";
-  document.getElementById("total").textContent = fmt(total);
-  const s1k = document.getElementById("stat1k"), s1 = document.getElementById("stat1");
-  if(isCur){ s1k.textContent = "今日支出"; s1.textContent = fmt(entries.filter(e=>e.date===todayStr() && e.currency==="JPY").reduce((s,e)=>s+e.amount,0)); }
-  else { s1k.textContent = "最高单日"; s1.textContent = fmt(maxDay); }
-  document.getElementById("stat2").textContent = fmt(elapsed ? total/elapsed : 0);
+  document.getElementById("totalLabel").textContent = (isCur ? "本月结余" : vm+"月结余") + "（收入 − 支出）";
+  document.getElementById("total").textContent = fmtSigned(incJpy - total);
+  document.getElementById("stat1k").textContent = "本月收入";
+  document.getElementById("stat1").textContent = fmt(incJpy);
+  document.getElementById("stat2k").textContent = "本月支出";
+  document.getElementById("stat2").textContent = fmt(total);
+  document.getElementById("stat3k").textContent = "本月笔数";
   document.getElementById("stat3").textContent = month.length + " 笔";
   const prog = document.getElementById("prog");
   if(isCur && total>0){
@@ -277,11 +281,12 @@ function render(){
   shown.forEach(e => { (days[e.date] = days[e.date]||[]).push(e); });
   flow.innerHTML = Object.keys(days).sort().reverse().map(ds => {
     const list = days[ds];
-    const dj = list.filter(e=>e.currency==="JPY").reduce((s,e)=>s+e.amount,0);
-    const dc = list.filter(e=>e.currency==="CNY").reduce((s,e)=>s+e.amount,0);
-    const sum = "小计 "+fmt(dj) + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
+    const dj = list.filter(e=>e.currency==="JPY" && e.type!=="income").reduce((s,e)=>s+e.amount,0);
+    const di = list.filter(e=>e.currency==="JPY" && e.type==="income").reduce((s,e)=>s+e.amount,0);
+    const dc = list.filter(e=>e.currency==="CNY" && e.type!=="income").reduce((s,e)=>s+e.amount,0);
+    const sum = "支出 "+fmt(dj) + (di>0 ? " · 收入 "+fmt(di) : "") + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
     return '<div class="day-group" id="day-'+ds+'"><div class="day-head"><span class="day-title">'+dayLabel(ds)+'</span><span class="day-sum">'+sum+'</span></div>' +
-      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+(e.note ? '<div class="note">'+e.note+'</div>' : '')+'</div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
+      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+(e.note ? '<div class="note">'+e.note+'</div>' : '')+'</div><span class="amt'+(e.type==="income"?' inc':'')+'">'+(e.type==="income" ? "+" : "")+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
   }).join("");
 }
 
