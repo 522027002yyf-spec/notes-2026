@@ -272,21 +272,30 @@ function render(){
   if(filterCat){ fchip.style.display = "inline-flex"; document.getElementById("fchipTxt").textContent = "只看：" + filterCat; }
   else { fchip.style.display = "none"; }
 
-  // 流水（按筛选）
+  // 工资收入（独立板块，不进支出流水）
+  const incList = month.filter(e => e.type==="income").slice().sort((a,b) => a.date < b.date ? 1 : -1);
+  const wageCard = document.getElementById("wageCard");
+  if(incList.length){
+    wageCard.style.display = "";
+    document.getElementById("wageHint").textContent = "共 " + incList.length + " 班 · 合计 " + fmt(incList.filter(e=>e.currency==="JPY").reduce((s,e)=>s+e.amount,0));
+    document.getElementById("wageList").innerHTML = incList.map(e => '<div class="entry">'+chip("工资",38)+'<div class="meta"><div class="item">'+dayLabel(e.date)+'</div><div class="cat">'+(e.note || e.item)+'</div></div><span class="amt inc">+'+fmt(e.amount)+'</span></div>').join("");
+  } else wageCard.style.display = "none";
+
+  // 流水（按筛选，只含支出）
   const flow = document.getElementById("flow");
-  const shown = filterCat ? month.filter(e => e.category===filterCat) : month;
-  if(!month.length){ flow.innerHTML = '<div class="empty">账本还是空的<br>跟各自的 Muse 说一句消费，就记上了</div>'; return; }
+  const expMonth = month.filter(e => e.type!=="income");
+  const shown = filterCat ? expMonth.filter(e => e.category===filterCat) : expMonth;
+  if(!expMonth.length){ flow.innerHTML = '<div class="empty">这个月还没有支出记录<br>消费跟各自的 Muse 说一句，就记上了</div>'; return; }
   if(!shown.length){ flow.innerHTML = '<div class="empty">这个月没有「'+filterCat+'」的记录</div>'; return; }
   const days = {};
   shown.forEach(e => { (days[e.date] = days[e.date]||[]).push(e); });
   flow.innerHTML = Object.keys(days).sort().reverse().map(ds => {
     const list = days[ds];
-    const dj = list.filter(e=>e.currency==="JPY" && e.type!=="income").reduce((s,e)=>s+e.amount,0);
-    const di = list.filter(e=>e.currency==="JPY" && e.type==="income").reduce((s,e)=>s+e.amount,0);
-    const dc = list.filter(e=>e.currency==="CNY" && e.type!=="income").reduce((s,e)=>s+e.amount,0);
-    const sum = "支出 "+fmt(dj) + (di>0 ? " · 收入 "+fmt(di) : "") + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
+    const dj = list.filter(e=>e.currency==="JPY").reduce((s,e)=>s+e.amount,0);
+    const dc = list.filter(e=>e.currency==="CNY").reduce((s,e)=>s+e.amount,0);
+    const sum = "小计 "+fmt(dj) + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
     return '<div class="day-group" id="day-'+ds+'"><div class="day-head"><span class="day-title">'+dayLabel(ds)+'</span><span class="day-sum">'+sum+'</span></div>' +
-      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+(e.note ? '<div class="note">'+e.note+'</div>' : '')+'</div><span class="amt'+(e.type==="income"?' inc':'')+'">'+(e.type==="income" ? "+" : "")+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
+      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+(e.note ? '<div class="note">'+e.note+'</div>' : '')+'</div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
   }).join("");
 }
 
