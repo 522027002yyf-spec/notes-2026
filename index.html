@@ -14,10 +14,10 @@
     --bg:#FAF6EF; --card:#FFFFFF; --ink:#22302A; --muted:#59685E;
     --accent:#1F6F50; --line:#EAE3D5;
     --red:#B23A2C; --sun:#B93F2D; --sat:#2A64A3;
-    --shadow:0 2px 14px rgba(60,50,20,.07); --track:#F0EADD; --press:#F3EEE1;
+    --shadow:0 2px 14px rgba(60,50,20,.07); --track:#F0EADD; --press:#F3EEE1; --paper:#FFFDF4;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#141815; --card:#1F2620; --ink:#EDEBE4; --muted:#9AA79D; --line:#333B33; --shadow:0 2px 14px rgba(0,0,0,.35); --track:#2B332C; --press:#293028; --red:#E07A63; --sun:#E88A74; --sat:#7FB2E8; }
+    :root{ --bg:#141815; --card:#1F2620; --ink:#EDEBE4; --muted:#9AA79D; --line:#333B33; --shadow:0 2px 14px rgba(0,0,0,.35); --track:#2B332C; --press:#293028; --red:#E07A63; --sun:#E88A74; --sat:#7FB2E8; --paper:#2A2F28; }
   }
   *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
   body{ background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans SC",sans-serif; padding:0 14px calc(48px + env(safe-area-inset-bottom)); line-height:1.6; }
@@ -97,6 +97,15 @@
   .entry .item{ font-size:15px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .entry .cat{ font-size:12px; color:var(--muted); margin-top:1px; }
   .entry .note{ font-size:12px; color:var(--muted); margin-top:3px; line-height:1.55; }
+  /* 小票式明细 */
+  .receipt{ margin-top:9px; max-width:300px; filter:drop-shadow(0 1px 3px rgba(60,50,20,.13)); }
+  .receipt .r-body{ background:var(--paper); border-radius:5px 5px 0 0; padding:9px 12px 7px; }
+  .receipt .r-edge{ height:6px; background:conic-gradient(from 135deg at 50% 0, var(--paper) 90deg, transparent 0deg); background-size:12px 6px; background-repeat:repeat-x; }
+  .r-row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:12px; padding:3px 0; border-bottom:1px dashed var(--line); }
+  .r-row:last-child{ border-bottom:none; }
+  .r-row .rn{ min-width:0; }
+  .r-row .rp{ font-variant-numeric:tabular-nums; flex:none; font-weight:600; }
+  .r-line{ font-size:12px; color:var(--muted); padding:3px 0; line-height:1.55; }
   .entry .amt{ font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; flex:none; }
   .entry .amt.inc{ color:var(--accent); }
   .empty{ text-align:center; color:var(--muted); padding:30px 10px; font-size:14px; line-height:1.7; }
@@ -205,6 +214,16 @@ function dayLabel(ds){
   return base;
 }
 function shiftYM(ym, delta){ const [y,m]=ym.split("-").map(Number); const d=new Date(y, m-1+delta, 1); return d.getFullYear()+"-"+pad(d.getMonth()+1); }
+function noteHtml(e){
+  if(!e.note) return "";
+  if(!e.note.includes("¥")) return '<div class="note">'+e.note+'</div>';
+  const rows = e.note.split("、").map(part => {
+    const m = part.match(/^(.*?)[\s　]*(¥[\d,]+(?:×\d+)?)$/);
+    if(m) return '<div class="r-row"><span class="rn">'+m[1]+'</span><span class="rp">'+m[2]+'</span></div>';
+    return '<div class="r-line">'+part+'</div>';
+  }).join("");
+  return '<div class="receipt"><div class="r-body">'+rows+'</div><div class="r-edge"></div></div>';
+}
 function chip(cat, size){
   const c = COLORS[cat]||"#9AA3AD";
   return '<span class="chip" style="background:'+c+'22;'+(size?'width:'+size+'px;height:'+size+'px;font-size:'+Math.round(size*0.47)+'px;':'')+'">'+(ICONS[cat]||"📦")+'</span>';
@@ -341,7 +360,7 @@ function render(){
     const dc = list.filter(e=>e.currency==="CNY").reduce((s,e)=>s+e.amount,0);
     const sum = "小计 "+fmt(dj) + (dc>0 ? " · "+dc.toLocaleString("ja-JP")+" 元" : "");
     return '<div class="day-group" id="day-'+ds+'"><div class="day-head"><span class="day-title">'+dayLabel(ds)+'</span><span class="day-sum">'+sum+'</span></div>' +
-      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+(e.note ? '<div class="note">'+e.note+'</div>' : '')+'</div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
+      list.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+e.item+'</div><div class="cat">'+e.category+'</div>'+noteHtml(e)+'</div><span class="amt">'+(e.currency==="CNY" ? e.amount.toLocaleString("ja-JP")+" 元" : fmt(e.amount))+'</span></div>').join("") + '</div>';
   }).join("");
 }
 
