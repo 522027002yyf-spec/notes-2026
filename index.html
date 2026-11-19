@@ -12,7 +12,7 @@
 <style>
   :root{
     --bg:#FAF6EF; --card:#FFFFFF; --ink:#22302A; --muted:#59685E;
-    --accent:#1F6F50; --accent2:#2E8B66; --line:#EAE3D5;
+    --accent:#1F6F50; --line:#EAE3D5;
     --red:#B23A2C; --sun:#B93F2D; --sat:#2A64A3;
     --shadow:0 2px 14px rgba(60,50,20,.07); --track:#F0EADD; --press:#F3EEE1;
   }
@@ -34,19 +34,18 @@
   .card h2{ font-size:15px; font-weight:700; margin-bottom:6px; display:flex; align-items:baseline; justify-content:space-between; }
   .card h2 .hint{ color:var(--muted); font-weight:400; font-size:12px; }
   /* 主卡 */
-  .hero{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border-radius:20px; box-shadow:0 6px 22px rgba(31,111,80,.28); padding:22px 20px 18px; margin-bottom:14px; position:relative; overflow:hidden; }
-  .hero::before{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.08); top:-110px; right:-60px; }
-  .hero .total-label{ font-size:13px; opacity:.95; position:relative; }
-  .hero .total{ font-size:42px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.5px; margin:2px 0 14px; position:relative; }
-  .hero .stats{ display:flex; gap:10px; position:relative; }
+  .hero{ background:var(--accent); color:#fff; border-radius:20px; box-shadow:0 6px 22px rgba(31,111,80,.22); padding:22px 20px 18px; margin-bottom:14px; }
+  .hero .total-label{ font-size:13px; opacity:.95; }
+  .hero .total{ font-size:42px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-.5px; margin:2px 0 14px; }
+  .hero .stats{ display:flex; gap:10px; }
   .hero .stat{ flex:1; background:rgba(0,0,0,.16); border-radius:12px; padding:9px 10px; }
   .hero .stat .k{ font-size:11px; opacity:.92; }
   .hero .stat .v{ font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:1px; }
-  .hero .prog{ margin-top:14px; position:relative; }
+  .hero .prog{ margin-top:14px; }
   .hero .prog .bar{ height:6px; border-radius:3px; background:rgba(255,255,255,.25); overflow:hidden; }
-  .hero .prog .bar i{ display:block; height:100%; background:#fff; border-radius:3px; transition:width .5s ease; }
+  .hero .prog .bar i{ display:block; height:100%; width:100%; background:#fff; border-radius:3px; transform-origin:left center; transition:transform .5s ease; }
   .hero .prog .txt{ font-size:12px; opacity:.95; margin-top:6px; font-variant-numeric:tabular-nums; }
-  .hero .cny-line{ font-size:12px; opacity:.95; margin-top:8px; font-variant-numeric:tabular-nums; position:relative; }
+  .hero .cny-line{ font-size:12px; opacity:.95; margin-top:8px; font-variant-numeric:tabular-nums; }
   /* 每日支出（日历） */
   .cal{ margin-top:10px; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
   .cal-wd{ display:grid; grid-template-columns:repeat(7,1fr); background:var(--track); }
@@ -62,7 +61,7 @@
   .cell.today .dn{ background:var(--accent); color:#fff; border-radius:6px; }
   .cell .amt{ margin-top:auto; font-size:11px; font-weight:700; color:var(--red); text-align:right; font-variant-numeric:tabular-nums; }
   .cell .meter{ height:4px; border-radius:2px; background:var(--track); margin-top:3px; overflow:hidden; }
-  .cell .meter i{ display:block; height:100%; background:var(--accent); border-radius:2px; transition:width .5s ease; }
+  .cell .meter i{ display:block; height:100%; width:100%; background:var(--accent); border-radius:2px; transform-origin:left center; transition:transform .5s ease; }
   .cell.has{ cursor:pointer; }
   .cell.has:active{ background:var(--press); }
   .trend-empty{ color:var(--muted); font-size:13px; text-align:center; padding:18px 0 8px; }
@@ -76,7 +75,7 @@
   .cat-name{ font-size:14px; font-weight:600; }
   .cat-amt{ font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; flex:none; }
   .cat-bar{ height:5px; border-radius:3px; background:var(--track); overflow:hidden; margin-top:5px; }
-  .cat-bar i{ display:block; height:100%; border-radius:3px; transition:width .5s ease; }
+  .cat-bar i{ display:block; height:100%; width:100%; border-radius:3px; transform-origin:left center; transition:transform .5s ease; }
   .cat-pct{ font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; flex:none; min-width:40px; text-align:right; }
   /* 流水 */
   #flowCard{ scroll-margin-top:76px; }
@@ -120,7 +119,7 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>🧾 夫妻共享记账本</h1>
+    <h1>夫妻共享记账本</h1>
     <div class="nav">
       <button id="prev" aria-label="上个月">‹</button>
       <div class="ym" id="ym"></div>
@@ -242,7 +241,7 @@ function render(){
   const prog = document.getElementById("prog");
   if(isCur && total>0){
     prog.style.display = "block";
-    document.getElementById("progBar").style.width = (elapsed/dim*100).toFixed(1)+"%";
+    document.getElementById("progBar").style.transform = "scaleX("+(elapsed/dim).toFixed(3)+")";
     document.getElementById("progTxt").textContent = vm+"月已过 "+elapsed+"/"+dim+" 天 · 按当前日均，全月预计 "+fmt(total/elapsed*dim);
   } else { prog.style.display = "none"; }
   const cl = document.getElementById("cnyLine");
@@ -268,7 +267,7 @@ function render(){
       const isToday = ds===todayStr();
       cells += '<div class="cell'+cls+(isToday?' today':'')+(v>0?' has':'')+'"'+(v>0?' data-date="'+ds+'"':'')+'><span class="dn">'+dn+'</span>'
         + (v>0 ? '<span class="amt">'+Math.round(v).toLocaleString("ja-JP")+'</span>' : '')
-        + '<span class="meter"><i style="width:'+(maxDay>0 ? (v/maxDay*100).toFixed(1) : 0)+'%"></i></span></div>';
+        + '<span class="meter"><i style="transform:scaleX('+(maxDay>0 ? (v/maxDay).toFixed(3) : 0)+')"></i></span></div>';
     }
   }
   trend.innerHTML = '<div class="cal"><div class="cal-wd"><span class="sun">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span class="sat">土</span></div><div class="cal-grid">'+cells+'</div></div>';
@@ -284,7 +283,7 @@ function render(){
     ? cats.map(([c,v]) =>
         '<div class="cat-row'+(filterCat===c?' active':'')+'" data-cat="'+c+'">'+chip(c)+
         '<div class="cat-main"><div class="cat-top"><span class="cat-name">'+c+'</span><span class="cat-amt">'+fmt(v)+'</span></div>'+
-        '<div class="cat-bar"><i style="width:'+(v/maxCat*100).toFixed(1)+'%;background:'+(COLORS[c]||"#9AA3AD")+'"></i></div></div>'+
+        '<div class="cat-bar"><i style="transform:scaleX('+(v/maxCat).toFixed(3)+');background:'+(COLORS[c]||"#9AA3AD")+'"></i></div></div>'+
         '<span class="cat-pct">'+(v/total*100).toFixed(1)+'%</span></div>').join("")
     : '<div class="empty">暂无记录</div>';
   catsEl.querySelectorAll(".cat-row").forEach(r => r.addEventListener("click", () => {
@@ -313,7 +312,7 @@ function render(){
     document.getElementById("incCats").innerHTML = incCats.map(g =>
       '<div class="cat-row" style="cursor:default">'+chip(g.base)+
       '<div class="cat-main"><div class="cat-top"><span class="cat-name">'+g.label+'</span><span class="cat-amt">'+fmt(g.v)+'</span></div>'+
-      '<div class="cat-bar"><i style="width:'+(maxInc? (g.v/maxInc*100).toFixed(1) : 0)+'%;background:'+(COLORS[g.base]||"#9AA3AD")+'"></i></div></div>'+
+      '<div class="cat-bar"><i style="transform:scaleX('+(maxInc? (g.v/maxInc).toFixed(3) : 0)+');background:'+(COLORS[g.base]||"#9AA3AD")+'"></i></div></div>'+
       '<span class="cat-pct">'+(incTotal? (g.v/incTotal*100).toFixed(1) : 0)+'%</span></div>').join("");
     document.getElementById("wageList").innerHTML = '<div class="sub-title">明细（按日期）</div>' + incList.map(e => '<div class="entry">'+chip(e.category,38)+'<div class="meta"><div class="item">'+dayLabel(e.date)+'</div><div class="cat">'+(e.person ? e.person+" · " : "")+(e.note || e.item)+'</div></div><span class="amt inc">+'+fmt(e.amount)+'</span></div>').join("");
   } else wageCard.style.display = "none";
