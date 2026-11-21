@@ -445,7 +445,17 @@
    "category": "食材买菜",
    "type": "expense",
    "note": "调味猪里脊 ¥406、蒸牛肉蔬菜 ¥398、消费税 ¥64、积分抵扣 ¥74"
+  },
+  {
+   "date": "2026-11-21",
+   "item": "兼职工资",
+   "amount": 10400,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "8小时",
+   "person": "毛"
   }
  ],
- "updatedAt": "2026-11-20 23:05"
+ "updatedAt": "2026-11-21 19:53"
 }
