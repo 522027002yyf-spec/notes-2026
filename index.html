@@ -265,7 +265,7 @@ function render(){
   if(isCur && total>0){
     prog.style.display = "block";
     document.getElementById("progBar").style.transform = "scaleX("+(elapsed/dim).toFixed(3)+")";
-    document.getElementById("progTxt").textContent = vm+"月已过 "+elapsed+"/"+dim+" 天 · 按当前日均，全月预计 "+fmt(total/elapsed*dim);
+    document.getElementById("progTxt").textContent = vm+"月已过 "+elapsed+"/"+dim+" 天 · 日均支出 "+fmt(Math.round(total/elapsed))+" · 按此日均，全月预计 "+fmt(total/elapsed*dim);
   } else { prog.style.display = "none"; }
   const cl = document.getElementById("cnyLine");
   if(cnyTotal>0){ cl.style.display="block"; cl.textContent = "另有人民币支出 " + cnyTotal.toLocaleString("ja-JP") + " 元（分开统计，不并入上面）"; } else { cl.style.display="none"; }
