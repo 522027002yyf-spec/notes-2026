@@ -474,7 +474,16 @@
    "category": "饮料零食",
    "type": "expense",
    "note": "立顿红茶拿铁 ¥169、酪农3.6牛奶 ¥219、消费税 ¥31、微信支付"
+  },
+  {
+   "date": "2026-11-22",
+   "item": "扭蛋机",
+   "amount": 1700,
+   "currency": "JPY",
+   "category": "娱乐休闲",
+   "type": "expense",
+   "note": "扭蛋机店消费"
   }
  ],
- "updatedAt": "2026-11-21 23:15"
+ "updatedAt": "2026-11-22T12:51:25+09:00"
 }
