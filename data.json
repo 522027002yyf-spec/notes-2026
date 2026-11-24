@@ -547,7 +547,16 @@
       "category": "交通",
       "type": "expense",
       "note": "口头报账"
+    },
+    {
+      "date": "2026-11-24",
+      "item": "咖啡（蚂蚁邦）",
+      "amount": 117,
+      "currency": "JPY",
+      "category": "饮料零食",
+      "type": "expense",
+      "note": "翡翠山咖啡 ¥109、消费税 ¥8、交通系IC支付"
     }
   ],
-  "updatedAt": "2026-11-24 12:57"
+  "updatedAt": "2026-11-24 15:01"
 }
