@@ -538,7 +538,16 @@
       "type": "income",
       "person": "严",
       "note": "19:00–23:00，4小时（含深夜1小时）"
+    },
+    {
+      "date": "2026-11-24",
+      "item": "电车（上学）",
+      "amount": 310,
+      "currency": "JPY",
+      "category": "交通",
+      "type": "expense",
+      "note": "口头报账"
     }
   ],
-  "updatedAt": "2026-11-23 23:06"
+  "updatedAt": "2026-11-24 12:57"
 }
