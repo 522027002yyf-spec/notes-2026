@@ -592,7 +592,34 @@
       "category": "交通",
       "type": "expense",
       "note": "口头报账"
+    },
+    {
+      "date": "2026-11-25",
+      "item": "美容用品（Seria中野丸井店）",
+      "amount": 440,
+      "currency": "JPY",
+      "category": "衣物美容",
+      "type": "expense",
+      "note": "弯头美甲镊子 ¥100、双眼皮贴 ¥100、假睫毛 ¥100、女士猫咪图案短筒袜 ¥100、分摊税 ¥40、信用卡支付"
+    },
+    {
+      "date": "2026-11-25",
+      "item": "文具（Seria中野丸井店）",
+      "amount": 220,
+      "currency": "JPY",
+      "category": "学习教育",
+      "type": "expense",
+      "note": "防滑直尺15cm ¥100、双头笔笔（小笔） ¥100、分摊税 ¥20、信用卡支付"
+    },
+    {
+      "date": "2026-11-25",
+      "item": "日用品（Seria中野丸井店）",
+      "amount": 330,
+      "currency": "JPY",
+      "category": "日用家用",
+      "type": "expense",
+      "note": "深型餐碗1.1L ¥200、吸附式马桶座垫 ¥100、分摊税 ¥30、信用卡支付"
     }
   ],
-  "updatedAt": "2026-11-25 18:26"
+  "updatedAt": "2026-11-25 19:28"
 }
