@@ -583,7 +583,16 @@
       "category": "外食",
       "type": "expense",
       "note": "巨无霸套餐（巨无霸、薯条M、零度可乐M） ¥850、照烧汉堡套餐（照烧汉堡、薯条M、热柠檬茶M） ¥750、积分抵扣 ¥300"
+    },
+    {
+      "date": "2026-11-25",
+      "item": "电车",
+      "amount": 710,
+      "currency": "JPY",
+      "category": "交通",
+      "type": "expense",
+      "note": "口头报账"
     }
   ],
-  "updatedAt": "2026-11-25 17:44"
+  "updatedAt": "2026-11-25 18:26"
 }
