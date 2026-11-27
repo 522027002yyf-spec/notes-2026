@@ -1,671 +1,689 @@
 {
-  "entries": [
-    {
-      "date": "2026-11-01",
-      "item": "衣服（拼多多）",
-      "amount": 8356,
-      "currency": "JPY",
-      "category": "衣物美容"
-    },
-    {
-      "date": "2026-11-02",
-      "item": "煤炉相机",
-      "amount": 15000,
-      "currency": "JPY",
-      "category": "购物"
-    },
-    {
-      "date": "2026-11-02",
-      "item": "买菜（学校物产）",
-      "amount": 4086,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-02",
-      "item": "买菜（蚂蚁邦）",
-      "amount": 309,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-02",
-      "item": "买菜（蚂蚁邦）",
-      "amount": 346,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-03",
-      "item": "日用品（堂吉诃德）",
-      "amount": 1386,
-      "currency": "JPY",
-      "category": "日用家用"
-    },
-    {
-      "date": "2026-11-03",
-      "item": "日用品（无印良品）",
-      "amount": 3707,
-      "currency": "JPY",
-      "category": "日用家用"
-    },
-    {
-      "date": "2026-11-03",
-      "item": "买菜（萨米托）",
-      "amount": 551,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-03",
-      "item": "买菜（商店街）",
-      "amount": 3263,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-03",
-      "item": "买菜（蚂蚁邦）",
-      "amount": 354,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-05",
-      "item": "买菜（GU+m无印）",
-      "amount": 2592,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-06",
-      "item": "买菜（蚂蚁邦）",
-      "amount": 525,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-06",
-      "item": "买菜（萨米托）",
-      "amount": 1220,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-08",
-      "item": "日用品（Homes）",
-      "amount": 2279,
-      "currency": "JPY",
-      "category": "日用家用"
-    },
-    {
-      "date": "2026-11-08",
-      "item": "买菜（咖啡店）",
-      "amount": 997,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-08",
-      "item": "买菜",
-      "amount": 3590,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-09",
-      "item": "外食（汉堡王）",
-      "amount": 1780,
-      "currency": "JPY",
-      "category": "外食"
-    },
-    {
-      "date": "2026-11-09",
-      "item": "过敏药",
-      "amount": 2196,
-      "currency": "JPY",
-      "category": "医疗健康"
-    },
-    {
-      "date": "2026-11-10",
-      "item": "交通费",
-      "amount": 600,
-      "currency": "JPY",
-      "category": "交通"
-    },
-    {
-      "date": "2026-11-10",
-      "item": "买菜（橘子）",
-      "amount": 400,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-10",
-      "item": "买菜（地下商店）",
-      "amount": 2603,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-11",
-      "item": "饮料",
-      "amount": 500,
-      "currency": "JPY",
-      "category": "饮料零食"
-    },
-    {
-      "date": "2026-11-14",
-      "item": "买菜（商店街）",
-      "amount": 890,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-17",
-      "item": "买菜（seria 和糖鸡）",
-      "amount": 1263,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-17",
-      "item": "买菜（业务和蚂蚁帮）",
-      "amount": 1973,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-17",
-      "item": "交通费（上学）",
-      "amount": 650,
-      "currency": "JPY",
-      "category": "交通"
-    },
-    {
-      "date": "2026-11-17",
-      "item": "外食（蚂蚁帮）",
-      "amount": 106,
-      "currency": "JPY",
-      "category": "外食"
-    },
-    {
-      "date": "2026-11-17",
-      "item": "买菜（蚂蚁邦）",
-      "amount": 471,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-12",
-      "item": "买菜（Life）",
-      "amount": 1057,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-12",
-      "item": "眼科（严）",
-      "amount": 3070,
-      "currency": "JPY",
-      "category": "医疗健康"
-    },
-    {
-      "date": "2026-11-12",
-      "item": "外食（定食）",
-      "amount": 2400,
-      "currency": "JPY",
-      "category": "外食"
-    },
-    {
-      "date": "2026-11-13",
-      "item": "买菜（蚂蚁邦）",
-      "amount": 761,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-14",
-      "item": "日用品（唐吉可德）",
-      "amount": 7552,
-      "currency": "JPY",
-      "category": "日用家用"
-    },
-    {
-      "date": "2026-11-14",
-      "item": "买菜（蚂蚁）",
-      "amount": 577,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-18",
-      "item": "买菜（OK超市）",
-      "amount": 688,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-18",
-      "item": "咖啡（蚂蚁邦）",
-      "amount": 117,
-      "currency": "JPY",
-      "category": "饮料零食"
-    },
-    {
-      "date": "2026-11-18",
-      "item": "盐面包（Life）",
-      "amount": 244,
-      "currency": "JPY",
-      "category": "食材买菜"
-    },
-    {
-      "date": "2026-11-18",
-      "item": "买菜（肉之宝屋）",
-      "amount": 2077,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "note": "牛腹肉切片 ¥594、嫩鸡柳 ¥487、艾尔帕克 ¥536、干萝卜丝 ¥98、味噌汤配料 ¥208、消费税 ¥154"
-    },
-    {
-      "date": "2026-11-18",
-      "item": "买菜（野方青果）",
-      "amount": 751,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "note": "白菜1/4 ¥100、小松菜 ¥198、袋装黄瓜 ¥235、豆腐 ¥158、大号购物袋 ¥5"
-    },
-    {
-      "date": "2026-11-01",
-      "item": "工资（玄 中野店）",
-      "amount": 6720,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "18:00–23:00，5小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-04",
-      "item": "工资（玄 中野店）",
-      "amount": 6720,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "18:00–23:00，5小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-06",
-      "item": "工资（玄 中野店）",
-      "amount": 5440,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "19:00–23:00，4小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-08",
-      "item": "工资（玄 中野店）",
-      "amount": 5440,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "19:00–23:00，4小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-09",
-      "item": "工资（玄 中野店）",
-      "amount": 6720,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "18:00–23:00，5小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-13",
-      "item": "工资（玄 中野店）",
-      "amount": 5440,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "19:00–23:00，4小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-16",
-      "item": "工资（玄 中野店）",
-      "amount": 6720,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "18:00–23:00，5小时（含深夜1小时）",
-      "person": "严"
-    },
-    {
-      "date": "2026-11-07",
-      "item": "兼职工资",
-      "amount": 10400,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "8小时",
-      "person": "毛"
-    },
-    {
-      "date": "2026-11-08",
-      "item": "兼职工资",
-      "amount": 7800,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "6小时",
-      "person": "毛"
-    },
-    {
-      "date": "2026-11-09",
-      "item": "兼职工资",
-      "amount": 3900,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "3小时",
-      "person": "毛"
-    },
-    {
-      "date": "2026-11-12",
-      "item": "兼职工资",
-      "amount": 3900,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "3小时",
-      "person": "毛"
-    },
-    {
-      "date": "2026-11-15",
-      "item": "兼职工资",
-      "amount": 10400,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "8小时",
-      "person": "毛"
-    },
-    {
-      "date": "2026-11-19",
-      "item": "咖啡（蚂蚁邦）",
-      "amount": 213,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "note": "BOSS黑咖啡×2 ¥198、消费税 ¥15"
-    },
-    {
-      "date": "2026-11-19",
-      "item": "买菜（萨米托）",
-      "amount": 1130,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "note": "北海道产地直送牛奶 ¥239、韭菜炒肝 ¥381、味噌拌面（折后） ¥248、东京酱油拉面（五折后） ¥179、分摊税 ¥83"
-    },
-    {
-      "date": "2026-11-19",
-      "item": "饮料零食（萨米托）",
-      "amount": 1216,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "note": "松露饼干 ¥498、可果美思慕雪 ¥188、Craft Boss咖啡（4瓶组合折扣后） ¥440、分摊税 ¥90"
-    },
-    {
-      "date": "2026-11-20",
-      "item": "买菜（西友）",
-      "amount": 861,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "note": "葱盐鸡肉 ¥399、厚切里脊猪排 ¥399、消费税 ¥63、微信支付"
-    },
-    {
-      "date": "2026-11-20",
-      "item": "工资（玄 中野店）",
-      "amount": 5440,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "person": "严",
-      "note": "19:00–23:00，4小时（含深夜1小时）"
-    },
-    {
-      "date": "2026-11-21",
-      "item": "买菜（萨米托）",
-      "amount": 794,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "调味猪里脊 ¥406、蒸牛肉蔬菜 ¥398、消费税 ¥64、积分抵扣 ¥74"
-    },
-    {
-      "date": "2026-11-21",
-      "item": "兼职工资",
-      "amount": 10400,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "note": "8小时",
-      "person": "毛"
-    },
-    {
-      "date": "2026-11-21",
-      "item": "工资（玄 中野店）",
-      "amount": 6720,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "person": "严",
-      "note": "18:00–23:00，5小时（含深夜1小时）"
-    },
-    {
-      "date": "2026-11-21",
-      "item": "饮料（蚂蚁邦）",
-      "amount": 419,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "type": "expense",
-      "note": "立顿红茶拿铁 ¥169、酪农3.6牛奶 ¥219、消费税 ¥31、微信支付"
-    },
-    {
-      "date": "2026-11-22",
-      "item": "扭蛋机",
-      "amount": 1700,
-      "currency": "JPY",
-      "category": "娱乐休闲",
-      "type": "expense",
-      "note": "扭蛋机店消费"
-    },
-    {
-      "date": "2026-11-22",
-      "item": "买菜（肉之宝屋）",
-      "amount": 1926,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "澳洲牛肉切落 ¥902、嫩鸡鸡胸条（大） ¥439、嫩鸡鸡胸条（大） ¥442、消费税 ¥143"
-    },
-    {
-      "date": "2026-11-22",
-      "item": "大创（中野百老汇店）",
-      "amount": 1860,
-      "currency": "JPY",
-      "category": "日用家用",
-      "type": "expense",
-      "note": "钛涂层厨房剪刀 ¥200、椿油梳子 ¥100、Craft Boss咖啡（4瓶） ¥400、Dekavita C果冻 ¥100、带柄不锈钢沥水篮 ¥200、白色土锅19cm ¥500、不锈钢垃圾网 ¥100、厨房保鲜袋 ¥100、消费税 ¥160、微信支付"
-    },
-    {
-      "date": "2026-11-22",
-      "item": "日用品（Seria中野丸井店）",
-      "amount": 770,
-      "currency": "JPY",
-      "category": "日用家用",
-      "type": "expense",
-      "note": "方形密封保鲜盒850ml（透明） ¥100、方形密封保鲜盒950ml（透明） ¥100、加厚聚乙烯手套（粉色40枚） ¥100、易系口垃圾袋45L（15枚） ¥100、金属老花镜+2.5 ¥100、方框超轻老花镜+1.5 ¥100、微波炉蒸格 ¥100、消费税 ¥70、信用卡支付"
-    },
-    {
-      "date": "2026-11-23",
-      "item": "买菜（业务超市高円寺店）",
-      "amount": 3599,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "面巾纸 ¥258、无盐番茄汁 ¥178、番茄罐头×2 ¥216、天然水 ¥44、白萝卜半根 ¥158、螺旋通心粉 ¥138、男爵土豆 ¥298、May Queen土豆 ¥298、沙拉豆×2 ¥396、盐葱酱 ¥298、番茄 ¥338、鸡肉 ¥709、消费税 ¥270、信用卡支付"
-    },
-    {
-      "date": "2026-11-23",
-      "item": "买菜（高野青果高円寺店）",
-      "amount": 2195,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "小银鱼干 ¥351、洋葱 ¥138、油豆腐 ¥98、南瓜 ¥198、嫩鸡腿肉（唐扬用） ¥365、茄子 ¥198、苹果 ¥680、购物袋 ¥5、消费税 ¥162、现金支付"
-    },
-    {
-      "date": "2026-11-23",
-      "item": "工资（玄 中野店）",
-      "amount": 5440,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "person": "严",
-      "note": "19:00–23:00，4小时（含深夜1小时）"
-    },
-    {
-      "date": "2026-11-24",
-      "item": "电车（上学）",
-      "amount": 310,
-      "currency": "JPY",
-      "category": "交通",
-      "type": "expense",
-      "note": "口头报账"
-    },
-    {
-      "date": "2026-11-24",
-      "item": "咖啡（蚂蚁邦）",
-      "amount": 117,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "type": "expense",
-      "note": "翡翠山咖啡 ¥109、消费税 ¥8、交通系IC支付"
-    },
-    {
-      "date": "2026-11-24",
-      "item": "买菜（萨米托）",
-      "amount": 395,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "北海道产地直送牛奶 ¥239、卷心菜 ¥128、分摊税 ¥29、积分抵扣分摊 ¥1"
-    },
-    {
-      "date": "2026-11-24",
-      "item": "饮料零食（萨米托）",
-      "amount": 692,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "type": "expense",
-      "note": "花生巧克力 ¥128、巧克力咖啡饼干 ¥138、无糖热饮 ¥158、Craft Boss咖啡（2瓶，组合折扣后） ¥220、分摊税 ¥51、积分抵扣分摊 ¥3"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "外食（麦当劳）",
-      "amount": 1300,
-      "currency": "JPY",
-      "category": "外食",
-      "type": "expense",
-      "note": "巨无霸套餐（巨无霸、薯条M、零度可乐M） ¥850、照烧汉堡套餐（照烧汉堡、薯条M、热柠檬茶M） ¥750、积分抵扣 ¥300"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "电车",
-      "amount": 710,
-      "currency": "JPY",
-      "category": "交通",
-      "type": "expense",
-      "note": "口头报账"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "美容用品（Seria中野丸井店）",
-      "amount": 440,
-      "currency": "JPY",
-      "category": "衣物美容",
-      "type": "expense",
-      "note": "弯头美甲镊子 ¥100、双眼皮贴 ¥100、假睫毛 ¥100、女士猫咪图案短筒袜 ¥100、分摊税 ¥40、信用卡支付"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "文具（Seria中野丸井店）",
-      "amount": 220,
-      "currency": "JPY",
-      "category": "学习教育",
-      "type": "expense",
-      "note": "防滑直尺15cm ¥100、双头笔笔（小笔） ¥100、分摊税 ¥20、信用卡支付"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "日用品（Seria中野丸井店）",
-      "amount": 330,
-      "currency": "JPY",
-      "category": "日用家用",
-      "type": "expense",
-      "note": "深型餐碗1.1L ¥200、吸附式马桶座垫 ¥100、分摊税 ¥30、信用卡支付"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "买菜（堂吉诃德新宿东南口店）",
-      "amount": 150,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "好侍七味粉（瓶装） ¥139、分摊税 ¥11、海外PAY支付"
-    },
-    {
-      "date": "2026-11-25",
-      "item": "饮料零食（堂吉诃德新宿东南口店）",
-      "amount": 410,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "type": "expense",
-      "note": "情热价格罐装薯片×2 ¥398、组合折扣 -¥18、分摊税 ¥30、海外PAY支付"
-    },
-    {
-      "date": "2026-11-26",
-      "item": "薄荷口香糖（蚂蚁邦百人町文化通店）",
-      "amount": 139,
-      "currency": "JPY",
-      "category": "饮料零食",
-      "type": "expense",
-      "note": "薄荷口香糖 ¥129、消费税 ¥10、微信支付"
-    },
-    {
-      "date": "2026-11-27",
-      "item": "买菜（蚂蚁邦中野3丁目店）",
-      "amount": 794,
-      "currency": "JPY",
-      "category": "食材买菜",
-      "type": "expense",
-      "note": "白壳鸡蛋（2盒） ¥538、融化混合奶酪 ¥198、消费税 ¥58、微信支付"
-    },
-    {
-      "date": "2026-11-27",
-      "item": "工资（玄 中野店）",
-      "amount": 5440,
-      "currency": "JPY",
-      "category": "兼职",
-      "type": "income",
-      "person": "严",
-      "note": "19:00–23:00，4小时（含深夜1小时）"
-    }
-  ],
-  "updatedAt": "2026-11-27T23:06:49+09:00"
+ "entries": [
+  {
+   "date": "2026-11-01",
+   "item": "衣服（拼多多）",
+   "amount": 8356,
+   "currency": "JPY",
+   "category": "衣物美容"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "煤炉相机",
+   "amount": 15000,
+   "currency": "JPY",
+   "category": "购物"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "买菜（学校物产）",
+   "amount": 4086,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 309,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-02",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 346,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "日用品（堂吉诃德）",
+   "amount": 1386,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "日用品（无印良品）",
+   "amount": 3707,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "买菜（萨米托）",
+   "amount": 551,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "买菜（商店街）",
+   "amount": 3263,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-03",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 354,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-05",
+   "item": "买菜（GU+m无印）",
+   "amount": 2592,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-06",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 525,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-06",
+   "item": "买菜（萨米托）",
+   "amount": 1220,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "日用品（Homes）",
+   "amount": 2279,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "买菜（咖啡店）",
+   "amount": 997,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "买菜",
+   "amount": 3590,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "外食（汉堡王）",
+   "amount": 1780,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "过敏药",
+   "amount": 2196,
+   "currency": "JPY",
+   "category": "医疗健康"
+  },
+  {
+   "date": "2026-11-10",
+   "item": "交通费",
+   "amount": 600,
+   "currency": "JPY",
+   "category": "交通"
+  },
+  {
+   "date": "2026-11-10",
+   "item": "买菜（橘子）",
+   "amount": 400,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-10",
+   "item": "买菜（地下商店）",
+   "amount": 2603,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-11",
+   "item": "饮料",
+   "amount": 500,
+   "currency": "JPY",
+   "category": "饮料零食"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "买菜（商店街）",
+   "amount": 890,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "买菜（seria 和糖鸡）",
+   "amount": 1263,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "买菜（业务和蚂蚁帮）",
+   "amount": 1973,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "交通费（上学）",
+   "amount": 650,
+   "currency": "JPY",
+   "category": "交通"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "外食（蚂蚁帮）",
+   "amount": 106,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-17",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 471,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "买菜（Life）",
+   "amount": 1057,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "眼科（严）",
+   "amount": 3070,
+   "currency": "JPY",
+   "category": "医疗健康"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "外食（定食）",
+   "amount": 2400,
+   "currency": "JPY",
+   "category": "外食"
+  },
+  {
+   "date": "2026-11-13",
+   "item": "买菜（蚂蚁邦）",
+   "amount": 761,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "日用品（唐吉可德）",
+   "amount": 7552,
+   "currency": "JPY",
+   "category": "日用家用"
+  },
+  {
+   "date": "2026-11-14",
+   "item": "买菜（蚂蚁）",
+   "amount": 577,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "买菜（OK超市）",
+   "amount": 688,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "咖啡（蚂蚁邦）",
+   "amount": 117,
+   "currency": "JPY",
+   "category": "饮料零食"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "盐面包（Life）",
+   "amount": 244,
+   "currency": "JPY",
+   "category": "食材买菜"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "买菜（肉之宝屋）",
+   "amount": 2077,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "note": "牛腹肉切片 ¥594、嫩鸡柳 ¥487、艾尔帕克 ¥536、干萝卜丝 ¥98、味噌汤配料 ¥208、消费税 ¥154"
+  },
+  {
+   "date": "2026-11-18",
+   "item": "买菜（野方青果）",
+   "amount": 751,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "note": "白菜1/4 ¥100、小松菜 ¥198、袋装黄瓜 ¥235、豆腐 ¥158、大号购物袋 ¥5"
+  },
+  {
+   "date": "2026-11-01",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-04",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-06",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "19:00–23:00，4小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "19:00–23:00，4小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-13",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "19:00–23:00，4小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-16",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "18:00–23:00，5小时（含深夜1小时）",
+   "person": "严"
+  },
+  {
+   "date": "2026-11-07",
+   "item": "兼职工资",
+   "amount": 10400,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "8小时",
+   "person": "毛"
+  },
+  {
+   "date": "2026-11-08",
+   "item": "兼职工资",
+   "amount": 7800,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "6小时",
+   "person": "毛"
+  },
+  {
+   "date": "2026-11-09",
+   "item": "兼职工资",
+   "amount": 3900,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "3小时",
+   "person": "毛"
+  },
+  {
+   "date": "2026-11-12",
+   "item": "兼职工资",
+   "amount": 3900,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "3小时",
+   "person": "毛"
+  },
+  {
+   "date": "2026-11-15",
+   "item": "兼职工资",
+   "amount": 10400,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "8小时",
+   "person": "毛"
+  },
+  {
+   "date": "2026-11-19",
+   "item": "咖啡（蚂蚁邦）",
+   "amount": 213,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "note": "BOSS黑咖啡×2 ¥198、消费税 ¥15"
+  },
+  {
+   "date": "2026-11-19",
+   "item": "买菜（萨米托）",
+   "amount": 1130,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "note": "北海道产地直送牛奶 ¥239、韭菜炒肝 ¥381、味噌拌面（折后） ¥248、东京酱油拉面（五折后） ¥179、分摊税 ¥83"
+  },
+  {
+   "date": "2026-11-19",
+   "item": "饮料零食（萨米托）",
+   "amount": 1216,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "note": "松露饼干 ¥498、可果美思慕雪 ¥188、Craft Boss咖啡（4瓶组合折扣后） ¥440、分摊税 ¥90"
+  },
+  {
+   "date": "2026-11-20",
+   "item": "买菜（西友）",
+   "amount": 861,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "note": "葱盐鸡肉 ¥399、厚切里脊猪排 ¥399、消费税 ¥63、微信支付"
+  },
+  {
+   "date": "2026-11-20",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "person": "严",
+   "note": "19:00–23:00，4小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-21",
+   "item": "买菜（萨米托）",
+   "amount": 794,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "调味猪里脊 ¥406、蒸牛肉蔬菜 ¥398、消费税 ¥64、积分抵扣 ¥74"
+  },
+  {
+   "date": "2026-11-21",
+   "item": "兼职工资",
+   "amount": 10400,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "note": "8小时",
+   "person": "毛"
+  },
+  {
+   "date": "2026-11-21",
+   "item": "工资（玄 中野店）",
+   "amount": 6720,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "person": "严",
+   "note": "18:00–23:00，5小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-21",
+   "item": "饮料（蚂蚁邦）",
+   "amount": 419,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "立顿红茶拿铁 ¥169、酪农3.6牛奶 ¥219、消费税 ¥31、微信支付"
+  },
+  {
+   "date": "2026-11-22",
+   "item": "扭蛋机",
+   "amount": 1700,
+   "currency": "JPY",
+   "category": "娱乐休闲",
+   "type": "expense",
+   "note": "扭蛋机店消费"
+  },
+  {
+   "date": "2026-11-22",
+   "item": "买菜（肉之宝屋）",
+   "amount": 1926,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "澳洲牛肉切落 ¥902、嫩鸡鸡胸条（大） ¥439、嫩鸡鸡胸条（大） ¥442、消费税 ¥143"
+  },
+  {
+   "date": "2026-11-22",
+   "item": "大创（中野百老汇店）",
+   "amount": 1860,
+   "currency": "JPY",
+   "category": "日用家用",
+   "type": "expense",
+   "note": "钛涂层厨房剪刀 ¥200、椿油梳子 ¥100、Craft Boss咖啡（4瓶） ¥400、Dekavita C果冻 ¥100、带柄不锈钢沥水篮 ¥200、白色土锅19cm ¥500、不锈钢垃圾网 ¥100、厨房保鲜袋 ¥100、消费税 ¥160、微信支付"
+  },
+  {
+   "date": "2026-11-22",
+   "item": "日用品（Seria中野丸井店）",
+   "amount": 770,
+   "currency": "JPY",
+   "category": "日用家用",
+   "type": "expense",
+   "note": "方形密封保鲜盒850ml（透明） ¥100、方形密封保鲜盒950ml（透明） ¥100、加厚聚乙烯手套（粉色40枚） ¥100、易系口垃圾袋45L（15枚） ¥100、金属老花镜+2.5 ¥100、方框超轻老花镜+1.5 ¥100、微波炉蒸格 ¥100、消费税 ¥70、信用卡支付"
+  },
+  {
+   "date": "2026-11-23",
+   "item": "买菜（业务超市高円寺店）",
+   "amount": 3599,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "面巾纸 ¥258、无盐番茄汁 ¥178、番茄罐头×2 ¥216、天然水 ¥44、白萝卜半根 ¥158、螺旋通心粉 ¥138、男爵土豆 ¥298、May Queen土豆 ¥298、沙拉豆×2 ¥396、盐葱酱 ¥298、番茄 ¥338、鸡肉 ¥709、消费税 ¥270、信用卡支付"
+  },
+  {
+   "date": "2026-11-23",
+   "item": "买菜（高野青果高円寺店）",
+   "amount": 2195,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "小银鱼干 ¥351、洋葱 ¥138、油豆腐 ¥98、南瓜 ¥198、嫩鸡腿肉（唐扬用） ¥365、茄子 ¥198、苹果 ¥680、购物袋 ¥5、消费税 ¥162、现金支付"
+  },
+  {
+   "date": "2026-11-23",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "person": "严",
+   "note": "19:00–23:00，4小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-24",
+   "item": "电车（上学）",
+   "amount": 310,
+   "currency": "JPY",
+   "category": "交通",
+   "type": "expense",
+   "note": "口头报账"
+  },
+  {
+   "date": "2026-11-24",
+   "item": "咖啡（蚂蚁邦）",
+   "amount": 117,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "翡翠山咖啡 ¥109、消费税 ¥8、交通系IC支付"
+  },
+  {
+   "date": "2026-11-24",
+   "item": "买菜（萨米托）",
+   "amount": 395,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "北海道产地直送牛奶 ¥239、卷心菜 ¥128、分摊税 ¥29、积分抵扣分摊 ¥1"
+  },
+  {
+   "date": "2026-11-24",
+   "item": "饮料零食（萨米托）",
+   "amount": 692,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "花生巧克力 ¥128、巧克力咖啡饼干 ¥138、无糖热饮 ¥158、Craft Boss咖啡（2瓶，组合折扣后） ¥220、分摊税 ¥51、积分抵扣分摊 ¥3"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "外食（麦当劳）",
+   "amount": 1300,
+   "currency": "JPY",
+   "category": "外食",
+   "type": "expense",
+   "note": "巨无霸套餐（巨无霸、薯条M、零度可乐M） ¥850、照烧汉堡套餐（照烧汉堡、薯条M、热柠檬茶M） ¥750、积分抵扣 ¥300"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "电车",
+   "amount": 710,
+   "currency": "JPY",
+   "category": "交通",
+   "type": "expense",
+   "note": "口头报账"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "美容用品（Seria中野丸井店）",
+   "amount": 440,
+   "currency": "JPY",
+   "category": "衣物美容",
+   "type": "expense",
+   "note": "弯头美甲镊子 ¥100、双眼皮贴 ¥100、假睫毛 ¥100、女士猫咪图案短筒袜 ¥100、分摊税 ¥40、信用卡支付"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "文具（Seria中野丸井店）",
+   "amount": 220,
+   "currency": "JPY",
+   "category": "学习教育",
+   "type": "expense",
+   "note": "防滑直尺15cm ¥100、双头笔笔（小笔） ¥100、分摊税 ¥20、信用卡支付"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "日用品（Seria中野丸井店）",
+   "amount": 330,
+   "currency": "JPY",
+   "category": "日用家用",
+   "type": "expense",
+   "note": "深型餐碗1.1L ¥200、吸附式马桶座垫 ¥100、分摊税 ¥30、信用卡支付"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "买菜（堂吉诃德新宿东南口店）",
+   "amount": 150,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "好侍七味粉（瓶装） ¥139、分摊税 ¥11、海外PAY支付"
+  },
+  {
+   "date": "2026-11-25",
+   "item": "饮料零食（堂吉诃德新宿东南口店）",
+   "amount": 410,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "情热价格罐装薯片×2 ¥398、组合折扣 -¥18、分摊税 ¥30、海外PAY支付"
+  },
+  {
+   "date": "2026-11-26",
+   "item": "薄荷口香糖（蚂蚁邦百人町文化通店）",
+   "amount": 139,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "薄荷口香糖 ¥129、消费税 ¥10、微信支付"
+  },
+  {
+   "date": "2026-11-27",
+   "item": "买菜（蚂蚁邦中野3丁目店）",
+   "amount": 794,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "白壳鸡蛋（2盒） ¥538、融化混合奶酪 ¥198、消费税 ¥58、微信支付"
+  },
+  {
+   "date": "2026-11-27",
+   "item": "工资（玄 中野店）",
+   "amount": 5440,
+   "currency": "JPY",
+   "category": "兼职",
+   "type": "income",
+   "person": "严",
+   "note": "19:00–23:00，4小时（含深夜1小时）"
+  },
+  {
+   "date": "2026-11-27",
+   "item": "咖啡（蚂蚁邦中野3丁目店）",
+   "amount": 279,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "BOSS无糖咖啡浓缩液（稀释型） ¥259、分摊税 ¥20、微信支付"
+  },
+  {
+   "date": "2026-11-27",
+   "item": "买菜（蚂蚁邦中野3丁目店）",
+   "amount": 269,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "农协牛奶 ¥249、分摊税 ¥20、微信支付"
+  }
+ ],
+ "updatedAt": "2026-11-27T23:16:16+09:00"
 }
