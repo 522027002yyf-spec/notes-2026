@@ -683,7 +683,25 @@
    "category": "食材买菜",
    "type": "expense",
    "note": "农协牛奶 ¥249、分摊税 ¥20、微信支付"
+  },
+  {
+   "date": "2026-11-28",
+   "item": "买菜（Life中野站前店）",
+   "amount": 213,
+   "currency": "JPY",
+   "category": "食材买菜",
+   "type": "expense",
+   "note": "日之出料理酒（1000ml） ¥198、分摊税 ¥15、交通系IC支付"
+  },
+  {
+   "date": "2026-11-28",
+   "item": "零食（Life中野站前店）",
+   "amount": 311,
+   "currency": "JPY",
+   "category": "饮料零食",
+   "type": "expense",
+   "note": "健达缤纷乐巧克力（费列罗） ¥288、分摊税 ¥23、交通系IC支付"
   }
  ],
- "updatedAt": "2026-11-27T23:16:16+09:00"
+ "updatedAt": "2026-11-28T14:11:01+09:00"
 }
